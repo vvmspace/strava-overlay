@@ -23,14 +23,7 @@ watch([photoImage, overlayImage, position, scale, padding, opacity], () => {
     });
 });
 
-// File Upload Handlers
-const triggerPhotoUpload = () => {
-    document.getElementById('photo-input-vue').click();
-};
-
-const triggerOverlayUpload = () => {
-    document.getElementById('overlay-input-vue').click();
-};
+// File Upload Handlers (Handled natively by z-indexed file inputs)
 
 const onPhotoChange = (e) => {
     if (e.target.files.length) {
@@ -209,7 +202,6 @@ const downloadImage = () => {
                         @dragover.prevent="isPhotoDragover = true"
                         @dragleave.prevent="isPhotoDragover = false"
                         @drop.prevent="onPhotoDrop"
-                        @click="triggerPhotoUpload"
                     >
                         <input 
                             type="file" 
@@ -238,7 +230,6 @@ const downloadImage = () => {
                         @dragover.prevent="isOverlayDragover = true"
                         @dragleave.prevent="isOverlayDragover = false"
                         @drop.prevent="onOverlayDrop"
-                        @click="triggerOverlayUpload"
                     >
                         <input 
                             type="file" 
@@ -526,6 +517,7 @@ body {
     height: 100%;
     opacity: 0;
     cursor: pointer;
+    z-index: 10;
 }
 
 .dropzone-content {
