@@ -6,9 +6,9 @@ const photoImage = ref(null);
 const photoName = ref('');
 const overlayImage = ref(null);
 const overlayName = ref('');
-const position = ref('bottom-left');
-const scale = ref(35); // 10 to 100
-const padding = ref(4);  // 0 to 15
+const position = ref('center');
+const scale = ref(100); // 10 to 100
+const padding = ref(0);  // 0 to 15
 const opacity = ref(100); // 10 to 100
 
 const canvasRef = ref(null);
